@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": "salt",
+            "title": "salt",
+            "description": "Simple like the seawater, nothing more",
+            "price": 10
+        },
+    
+        {
+            "id": "shoyu",
+            "title": "shoyu",
+            "description": "The good old and traditional soy sauce",
+            "price": 10
+        },
+    
+        {
+            "id": "miso",
+            "title": "miso",
+            "description": "Paste made of fermented soybeans",
+            "price": 10
+        }
+    ]
+}
