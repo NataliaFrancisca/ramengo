@@ -9,3 +9,23 @@ $white-color: #FAFAED;
 
 // FONT-FAMILY:
 $default-font_family: "M PLUS Rounded 1c", sans-serif;
+
+@mixin listCardScroll {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding: 0 16px;
+    justify-content: space-between;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    scroll-behavior: smooth;
+    width: 100vw;
+    gap: 16px;
+    margin-bottom: 24px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
