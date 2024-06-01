@@ -1,0 +1,135 @@
+label.card-option{
+    background-color: $white-color;
+    border-radius: 11px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 320px;
+    height: 316px;
+
+    cursor: pointer;
+
+    & input{
+        display: none;
+    }
+
+    & span.card-image{
+        width: 104px;
+        height: 104px;
+        display: flex;    
+        background-size: cover;   
+    }
+
+    & h2.card-title{
+        font-size: 20px;
+        color: $blue-color;
+        font-weight: 900;
+        text-transform: capitalize;
+        margin: 14px 0 10px 0;
+    }
+
+    & p.card-subtitle{
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0 32px;
+        text-align: center;
+        text-wrap: wrap;
+    }
+
+    & span.card-price{
+        font-size: 20px;
+        font-weight: 900;
+        color: $orange-color;
+        margin-top: 36px;
+    }
+
+    @media screen and (max-width: 576px){
+        width: 288px;
+
+        &  p.card-subtitle{
+            padding: 0px;
+        }
+    }
+
+    // THIS COULD BE BETTER
+
+    // BROTH
+    &#label_salt{
+        & span.card-image{
+            background-image: url("assets/icon/salt/inactive.svg");
+        }
+
+        & input:checked ~ span.card-image{
+            background-image: url("assets/icon/salt/active.svg");
+        }
+    }
+
+    &#label_shoyu{
+        & span.card-image{
+            background-image: url("assets/icon/shoyu/inactive.svg");
+        }
+
+        & input:checked ~ span.card-image{
+            background-image: url("assets/icon/shoyu/active.svg");
+        }
+    }
+
+    
+    &#label_miso{
+        & span.card-image{
+            background-image: url("assets/icon/miso/inactive.svg");
+        }
+
+        & input:checked ~ span.card-image{
+            background-image: url("assets/icon/miso/active.svg");
+        }
+    }
+
+    // MEAT
+    &#label_chasu{
+        & span.card-image{
+            background-image: url("assets/icon/pork/inactive.svg");
+        }
+
+        & input:checked ~ span.card-image{
+            background-image: url("assets/icon/pork/active.svg");
+        }
+    }
+
+    &#label_yasai{
+        & span.card-image{
+            background-image: url("assets/icon/yasai/inactive.svg");
+        }
+
+        & input:checked ~ span.card-image{
+            background-image: url("assets/icon/yasai/active.svg");
+        }
+    }
+
+    &#label_karaague{
+        & span.card-image{
+            background-image: url("assets/icon/chicken/inactive.svg");
+        }
+
+        & input:checked ~ span.card-image{
+            background-image: url("assets/icon/chicken/active.svg");
+        }
+    }
+
+
+    &:has(> input:checked){
+        background-color: $blue-color;
+
+        & h2.card-title, p.card-subtitle{
+            color: $white-color;
+        }
+
+        & span.card-price{
+            color: $yellow-color;
+        }
+    }
+}

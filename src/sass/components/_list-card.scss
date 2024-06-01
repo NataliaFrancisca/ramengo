@@ -1,0 +1,44 @@
+section.section-list-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 47px;
+
+    & article.list-card{
+        display: flex;
+        gap: 64px;
+    }
+
+    @media screen and (max-width: 576px){
+        margin-top: 32px;
+
+        & article.list-card{
+            @include listCardScroll
+        }
+
+        & article.list-card-marker{
+            width: 140px;
+            height: 12px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & div.list-marker-dot{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #E0DBBF;
+            transition: all ease-in-out .2s;
+    
+            &.current-card{
+                width: 36px;
+                background-color: $orange-color;
+                border-radius: 8px;
+                transition: all ease-in-out .2s;
+            }
+        }
+    }
+}
