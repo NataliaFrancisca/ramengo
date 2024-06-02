@@ -5,6 +5,8 @@ import { ERadioName } from "../../ts/enum";
 import ListCard from "../ListCard/ListCard";
 
 import './FormHandler';
+import './ApiHandler';
+
 
 const Form = `
     <form id="form-lamen" action="POST">
@@ -22,7 +24,6 @@ const Form = `
 
             ${ListCard(listMeats, ERadioName.MEAT)}
         </fieldset>
-
 
         <button class="button" id="btn-form-lamen" type="submit">
             PLACE MY ORDER
