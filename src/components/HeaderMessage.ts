@@ -11,7 +11,6 @@ const HeaderMessage = `
 
         <button class="button blue">
             ORDER NOW 
-            <img src="assets/icon/arrow/arrow-yellow.svg" />
         </button>
     </section>
 `
