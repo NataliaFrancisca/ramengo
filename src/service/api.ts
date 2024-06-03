@@ -1,23 +1,23 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
-async function getData(){
+export async function fetchData(){
 
     const [brothsResponse, proteinsResponse] = await Promise.all([
         await fetch('https://api.tech.redventures.com.br/broths', {
             headers: {
-                "x-api-key": apiKey
+                "x-api-key": API_KEY
             }
         }).then((data) => {
 
             if(data){
-                return data.json();
+                return data.json()
             }
 
         }),
     
         await fetch('https://api.tech.redventures.com.br/proteins', {
             headers: {
-                "x-api-key": apiKey
+                "x-api-key": API_KEY
             }
         }).then((data) => {
             if(data){
@@ -26,29 +26,27 @@ async function getData(){
         })
     ])
 
-    console.log(brothsResponse);
-    console.log(proteinsResponse);
+
+    return { brothsResponse, proteinsResponse };
 }
 
 
-async function sendOrder(order: {brothId: string, proteinId: string}){
+export async function postUserOrder(order: {brothId: string, proteinId: string}){
 
     const response = await fetch('https://api.tech.redventures.com.br/order', {
         method: "POST",
         body: JSON.stringify(order),
         headers: {
-            "x-api-key": apiKey,
+            "x-api-key": API_KEY,
             "Content-type": "application/json; charset=UTF-8"
         },
     })
 
+    if(response.ok){
+        return await response.json();
+    }
 
-    console.log('RESPONSE POST', response.json())
-
+    return 'something got wrong'
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    getData();
-    // sendOrder();
-})

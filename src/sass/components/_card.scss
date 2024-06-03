@@ -19,11 +19,15 @@ label.card-option{
     & span.card-image{
         width: 104px;
         height: 104px;
-        display: flex;    
-        background-size: cover;   
+        display: flex;
+        background-size: cover; 
+        
+        &.card-image_active{
+            display: none;
+        }
     }
 
-    & h2.card-title{
+    & h2.card-name{
         font-size: 20px;
         color: $blue-color;
         font-weight: 900;
@@ -55,81 +59,24 @@ label.card-option{
         }
     }
 
-    // THIS COULD BE BETTER
-
-    // BROTH
-    &#label_salt{
-        & span.card-image{
-            background-image: url("assets/icon/salt/inactive.svg");
-        }
-
-        & input:checked ~ span.card-image{
-            background-image: url("assets/icon/salt/active.svg");
-        }
-    }
-
-    &#label_shoyu{
-        & span.card-image{
-            background-image: url("assets/icon/shoyu/inactive.svg");
-        }
-
-        & input:checked ~ span.card-image{
-            background-image: url("assets/icon/shoyu/active.svg");
-        }
-    }
-
-    
-    &#label_miso{
-        & span.card-image{
-            background-image: url("assets/icon/miso/inactive.svg");
-        }
-
-        & input:checked ~ span.card-image{
-            background-image: url("assets/icon/miso/active.svg");
-        }
-    }
-
-    // MEAT
-    &#label_chasu{
-        & span.card-image{
-            background-image: url("assets/icon/pork/inactive.svg");
-        }
-
-        & input:checked ~ span.card-image{
-            background-image: url("assets/icon/pork/active.svg");
-        }
-    }
-
-    &#label_yasai{
-        & span.card-image{
-            background-image: url("assets/icon/yasai/inactive.svg");
-        }
-
-        & input:checked ~ span.card-image{
-            background-image: url("assets/icon/yasai/active.svg");
-        }
-    }
-
-    &#label_karaague{
-        & span.card-image{
-            background-image: url("assets/icon/chicken/inactive.svg");
-        }
-
-        & input:checked ~ span.card-image{
-            background-image: url("assets/icon/chicken/active.svg");
-        }
-    }
-
-
     &:has(> input:checked){
         background-color: $blue-color;
+        transition: all ease-in-out .3s;
 
-        & h2.card-title, p.card-subtitle{
+        & h2.card-name, p.card-subtitle{
             color: $white-color;
         }
 
         & span.card-price{
             color: $yellow-color;
+        }
+
+        & span.card-image_active{
+            display: flex;
+        }
+
+        & span.card-image_inactive{
+            display: none;
         }
     }
 }

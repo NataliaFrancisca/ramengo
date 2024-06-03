@@ -2,11 +2,11 @@ import { ERadioName } from "../../ts/enum";
 import { ICard } from "../../ts/interface";
 import Card from "../Card/Card"
 
-const ListCard = (list: {data: Array<ICard>} , type: ERadioName) => {
+const ListCard = (list: Array<ICard> , type: ERadioName) => {
     return `
         <section class="section-list-card ${type}">
-            <article class="list-card list-card_${type}">
-                ${list.data.map((broth) => `${Card(broth, type)}`).join('')}
+            <article class="list-card list-card_${type}" style="grid-template-columns:repeat(${list.length}, auto)">
+                ${list.map((broth) => `${Card(broth, type)}`).join('')}
             </article>
 
             <article class="list-card-marker list-card-marker_${type}">
