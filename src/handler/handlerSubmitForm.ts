@@ -1,4 +1,5 @@
 import { postUserOrder } from "../service/api";
+import { ISuccessResponse } from "../ts/interface";
 
 export async function handlerSubmitForm(event: SubmitEvent){
     event.preventDefault();
@@ -10,7 +11,9 @@ export async function handlerSubmitForm(event: SubmitEvent){
         const response = await postUserOrder({brothId: radioBroth.value, proteinId: radioProtein.value})
 
         if(response){
-            window.location.href = "sucess.html";
+            const encodedResponse = JSON.stringify(response as ISuccessResponse);
+            localStorage.setItem('RAMENGO_ORDER', encodedResponse);
+            window.location.href = "success.html"
         }
     }
 

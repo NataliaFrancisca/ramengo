@@ -1,0 +1,123 @@
+main#page-success{
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+
+    & section#section-order-data{
+        width: 49.12%;
+        background-image: url(../../../public/assets/images/pattern-azul.svg);
+        background-position: left;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & article#order-data{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            & img{
+                width: 354px;
+                height: 392px;
+                object-fit: cover;
+            }
+    
+            & label{
+                font-size: 20px;
+                color: $white-color;
+            }
+    
+            & h2{
+                font-size: 32px;
+                color: $yellow-color;
+            }
+
+            & label, h2{
+                font-weight: 900;
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
+    }
+
+    & section#success-message{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 51.98%;
+        padding: 0 10px;
+        text-align: center;
+
+        & img{
+            width: 65.46px;
+            height: 71.31px;
+            margin-bottom: 18.69px;
+        }
+
+
+        & span{
+            color: $yellow-color;
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 17px;
+        }
+
+        & h1{
+            color: $orange-color;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+
+        & p{
+            font-size: 16px;
+            font-weight: 500;
+            color: $black-color;
+            margin-bottom: 32px;
+        }
+
+        & button {
+            width: 235px;
+
+            & a{
+                color: $white-color;
+                text-decoration: none;
+            }
+
+            &:after{
+                content: "";
+                background-image: url(../../../public/assets/icon/arrow/arrow-yellow.svg);
+                height: 16px;
+                width: 20px;
+                display: flex;    
+                background-size: cover;  
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+
+        & section#section-order-data,
+        & section#success-message{
+            width: 100%;
+            text-align: center;
+        }
+
+        & section#section-order-data{
+            justify-content: start;
+            min-height: 677px;
+            height: auto;
+        }
+
+        & section#success-message{
+            padding: 71px 0 72px 0;
+        }
+    }
+
+}
+
