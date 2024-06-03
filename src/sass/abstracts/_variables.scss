@@ -12,7 +12,6 @@ $default-font_family: "M PLUS Rounded 1c", sans-serif;
 
 @mixin listCardScroll {
     display: grid;
-    grid-template-columns: repeat(3, auto);
     padding: 0 16px;
     justify-content: space-between;
     -webkit-overflow-scrolling: touch;
