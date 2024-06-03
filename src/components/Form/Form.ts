@@ -26,7 +26,7 @@ const Form = `
             <span class="fieldset-description">Some people love, some don’t. We have options for all tastes. </span>
         </fieldset>
 
-        <button class="button" id="btn-form-lamen" type="submit">
+        <button class="button blue" id="btn-form-lamen" type="submit">
             PLACE MY ORDER
         </button>
     </form>
