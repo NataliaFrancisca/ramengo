@@ -2,17 +2,20 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 export async function fetchData(){
 
-    const [brothsResponse, proteinsResponse] = await Promise.all([
-        await fetch('https://api.tech.redventures.com.br/broths', {
+    const [brothsResponse, proteinsResponse] = 
+    
+    await Promise.all([
+        await fetch('https://api.tech.redventures.com.br/broth', {
             headers: {
                 "x-api-key": API_KEY
             }
         }).then((data) => {
-
             if(data){
                 return data.json()
             }
-
+        }).catch((error) => {
+            console.log("ERROR", error);
+            return false;
         }),
     
         await fetch('https://api.tech.redventures.com.br/proteins', {
@@ -23,6 +26,9 @@ export async function fetchData(){
             if(data){
                 return data.json();
             }
+        }).catch(error => {
+            console.log("ERROR", error);
+            return false;
         })
     ])
 
