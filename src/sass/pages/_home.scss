@@ -15,9 +15,9 @@ main#page-home{
     }
 
     & button[type=submit]{
+        @include buttonDefault;
         margin-top: 80px;
     }
-
 
     @media screen and (max-width: 576px){
         margin-top: 40px;
