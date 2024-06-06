@@ -1,5 +1,6 @@
 // BASE
 @import './abstracts/variables';
+@import './abstracts/mixins';
 @import './base/global';
 
 // PAGES
@@ -11,3 +12,4 @@
 @import './components/fieldset';
 @import './components/card';
 @import './components/list-card';
+@import './components/illustration';

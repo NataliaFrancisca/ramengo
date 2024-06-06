@@ -10,12 +10,14 @@ section.section-list-card{
         gap: 64px;
     }
 
-    @media screen and (max-width: 576px){
-        margin-top: 32px;
-
+    @media screen and (max-width: 1200px){
         & article.list-card{
             @include listCardScroll
         }
+    }
+
+    @media screen and (max-width: 576px){
+        margin-top: 32px;
 
         & article.list-card-marker{
             width: 140px;

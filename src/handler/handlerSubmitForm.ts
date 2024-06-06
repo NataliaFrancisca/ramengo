@@ -12,7 +12,7 @@ export async function handlerSubmitForm(event: SubmitEvent){
 
         if(response){
             const encodedResponse = JSON.stringify(response as ISuccessResponse);
-            localStorage.setItem('RAMENGO_ORDER', encodedResponse);
+            sessionStorage.setItem('RAMENGO_ORDER', encodedResponse);
             window.location.href = "success.html"
         }
     }

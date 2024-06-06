@@ -6,7 +6,7 @@ main#page-success{
 
     & section#section-order-data{
         width: 49.12%;
-        background-image: url(../../../public/assets/images/pattern-azul.svg);
+        background-image: url(/assets/images/pattern-azul.svg);
         background-position: left;
         background-size: cover;
         display: flex;
@@ -81,20 +81,11 @@ main#page-success{
         }
 
         & button {
-            width: 235px;
+            @include buttonDefault(235px);
 
             & a{
                 color: $white-color;
                 text-decoration: none;
-            }
-
-            &:after{
-                content: "";
-                background-image: url(../../../public/assets/icon/arrow/arrow-yellow.svg);
-                height: 16px;
-                width: 20px;
-                display: flex;    
-                background-size: cover;  
             }
         }
     }
@@ -109,13 +100,23 @@ main#page-success{
         }
 
         & section#section-order-data{
-            justify-content: start;
             min-height: 677px;
             height: auto;
         }
 
         & section#success-message{
-            padding: 71px 0 72px 0;
+            padding: 71px 10px 72px 10px;
+        }
+    }
+
+    @media screen and (max-width: 576px){
+        & section#section-order-data article#order-data{ 
+            padding-bottom: 100px;
+
+            img{
+                width: 90%;
+                object-fit: contain;
+            }
         }
     }
 
