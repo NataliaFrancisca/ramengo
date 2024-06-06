@@ -5,7 +5,7 @@ export async function fetchData(){
     const [brothsResponse, proteinsResponse] = 
     
     await Promise.all([
-        await fetch('https://api.tech.redventures.com.br/broth', {
+        await fetch('https://api.tech.redventures.com.br/broths', {
             headers: {
                 "x-api-key": API_KEY
             }
