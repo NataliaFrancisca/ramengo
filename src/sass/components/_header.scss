@@ -1,103 +1,63 @@
 header#header-component{
     display: flex;
-
     background-image: url(assets/images/pattern-vermelha.svg);
     background-position: left;
     background-size: contain;
     height: 768px;
-
     position: relative;
 
-    @media screen and (max-width: 576px){
+    & section#container-header{
+        display: flex;
+        margin: 38px 264px 47px 268px;
+        width: 100%;
+        align-items: center;
+        position: relative;
+    }
+
+    @media screen and (max-width: 1200px){
+        & section#container-header{
+            margin: 38px 164px 47px 168px;
+        }
+    }
+
+    @media screen and (max-width: 992px){
         padding: 20px 30px 66px 30px;
         flex-direction: column;
         height: auto;
-    }
-}
 
-div#group-illustration{
-    display: flex;
-    position: absolute;
-    width: 673px;
-    top: 2.375rem;
-    left: 29rem;
-
-    &:after{
-        content: "";
-        width: 587px;
-        height: 587px;
-        border-radius: 50%;
-        background-color: #730000;
-        position: absolute;
-        margin: 48px 48px 48px 32px;
-    }
-
-    & img{
-        z-index: 1;
-        position: absolute;
-    }
-
-    & #illustration_entregadora{
-        height: 683px;
-    }
-
-    & #illustration_balao-amarelo{
-        right: 0px;
-        top: 257px;
-    }
-
-    & #illustration_balao-azul{
-        top: 9px;
-    }
-
-    @media screen and (max-width: 576px){
-        left: 0;
-        width: 265.06px;
-        height: 269px;
-        position: relative;
-        margin: 0 auto;
-        top: 0;
-
-        & #illustration_entregadora{
-            height: 269px;
-        }
-
-        &:after{
-            width: 231.19px;
-            height: 231.19px;
-            margin: 18px 18px 18px 12px;
-        }
-
-        & #illustration_balao-azul{
-            width: 45.69px;
-        }
-
-        & #illustration_balao-amarelo{
-           width:  41.75px;
-           top: 40%;
+        & section#container-header{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0px;
         }
     }
 }
 
-
-section#header-message{
+article#header-message{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 10rem;
-    left: 17.50rem;
-    z-index: 2;
     gap: 10px;
+    z-index: 11;
+
+    & p#text-header{
+        width: 220px;
+        color: $white-color;
+        font-weight: 400;
+        padding-left: 19px;
+    }
 
     & button{
-        margin-top: 28px;
+        @include buttonDefault;
+        margin-top: 24px;
+        margin-left: 16px;
     }
 
     & div#group-title{
         display: flex;
         align-items: baseline;
 
-        p#title_custom{
+        p#title-custom{
             color: $yellow-color;
             font-size: 48px;
             font-weight: 900;
@@ -107,38 +67,16 @@ section#header-message{
             letter-spacing: 10px;
         }
 
-        & h1{
+        & h1#title{
             font-size: 160px;
             color: $white-color;
             font-weight: 900;
             margin: 0;
             line-height: 0;
         }
-
-        @media screen and (max-width: 576px){
-            flex-direction: column;
-            align-items: center;
-
-            p#title_custom{
-                writing-mode: horizontal-tb;
-                text-orientation: unset;
-            }
-
-            h1{
-                line-height: 1;
-                font-size: 120px;
-            }
-        }
     }
 
-    p#text-header{
-        width: 201px;
-        color: $white-color;
-        font-weight: 400;
-        padding-left: 19px;
-    }
-
-    @media screen and (max-width: 576px){
+    @media screen and (max-width: 992px){
         position: static;
         left: 0;
         top: 0;
@@ -149,9 +87,22 @@ section#header-message{
             text-align: center;
         }
 
-        button.button.blue{
-            @media screen and (max-width: 576px){
-                display: none;
+        & button{
+            display: none;
+        }
+
+        & div#group-title{
+            flex-direction: column;
+            align-items: center;
+
+            & h1#title{
+                line-height: 1;
+                font-size: 120px;
+            }
+
+            & p#title-custom{
+                writing-mode: horizontal-tb;
+                text-orientation: unset;
             }
         }
     }
