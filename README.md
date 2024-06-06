@@ -1,6 +1,6 @@
 # *RamenGO*
 
-**RamgenGo** é uma plataforma para que o usuário possa montar um pedido de ramen, escolhendo os tipos de mantimentos e proteínas do prato.
+**RamenGo** é uma plataforma para que o usuário possa montar um pedido de ramen, escolhendo os tipos de mantimentos e proteínas do prato.
 
 ⭐ Este projeto foi desenvolvido como parte do processo seletivo para Front End Developer.
 
