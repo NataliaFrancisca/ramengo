@@ -1,5 +1,13 @@
 import Illustration from "../Illustration/Illustration";
 
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#form-lamen');
+    const button = document.querySelector("#navigate-form");
+
+    button?.addEventListener('click', () => {
+        form?.scrollIntoView({behavior: "smooth"});
+    });
+});
 
 const Header = `
     <header id="header-component">
@@ -18,7 +26,7 @@ const Header = `
             
                 <p id="text-header">Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!</p>
 
-                <button>ORDER NOW </button>
+                <button id="navigate-form">ORDER NOW </button>
             </article>
         </section>
 
