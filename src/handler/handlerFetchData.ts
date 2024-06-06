@@ -7,6 +7,9 @@ export async function handlerFetchData(){
     let fieldsetBroth = document.querySelector('.fieldset-component.broth');
     let fieldsetProteins = document.querySelector('.fieldset-component.protein');
 
+    fieldsetBroth!.innerHTML += `${Loader}`;
+    fieldsetProteins!.innerHTML += `${Loader}`;
+
     const { brothsResponse, proteinsResponse } = await fetchData();
 
     if(!brothsResponse || !proteinsResponse){
@@ -14,9 +17,6 @@ export async function handlerFetchData(){
         fieldsetProteins!.innerHTML +=  `<p class="error-message">I am sorry! Something got wrong, try later :)</p>`
         return;
     }
-
-    fieldsetBroth!.innerHTML += `${Loader}`;
-    fieldsetProteins!.innerHTML += `${Loader}`;
 
     const loaderBroth = document.querySelector('.fieldset-component.broth > #loader') as HTMLElement;
     const loaderFieldset = document.querySelector('.fieldset-component.protein > #loader') as HTMLElement;
@@ -26,4 +26,5 @@ export async function handlerFetchData(){
 
     fieldsetBroth!.innerHTML += `${ListCard(brothsResponse, ERadioName.BROTH)}`
     fieldsetProteins!.innerHTML += `${ListCard(proteinsResponse, ERadioName.PROTEIN)}`
+     
 }
